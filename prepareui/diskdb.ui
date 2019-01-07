@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1189</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Diskdb App</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>1176</width>
+      <height>561</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="MainVLayout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetMaximumSize</enum>
+     </property>
+     <property name="bottomMargin">
+      <number>6</number>
+     </property>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetMaximumSize</enum>
+       </property>
+       <item>
+        <widget class="QComboBox" name="comboBoxSELECT">
+         <property name="editable">
+          <bool>true</bool>
+         </property>
+         <property name="currentText" stdset="0">
+          <string notr="true"/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox_Distinct">
+         <property name="editable">
+          <bool>true</bool>
+         </property>
+         <property name="currentText" stdset="0">
+          <string notr="true">DISTINCT</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>DISTINCT</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ALL</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox_fields">
+         <property name="editable">
+          <bool>true</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>*</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>fsroot</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ino</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>dir</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>filename</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>type</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>size</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>mtime</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>atime</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ctime</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>uid</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>gid</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>FROM</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox_files">
+         <property name="editable">
+          <bool>true</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string notr="true">files</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>dirs</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>files inner join dirs on files.dirid=dirs.rowid</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>WHERE</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_Where"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>GROUP BY</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox_group">
+         <property name="editable">
+          <bool>true</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>*</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>fsroot</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ino</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>dir</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>filename</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>type</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>size</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>mtime</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>atime</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ctime</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>uid</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>gid</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>HAVING</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="having_condition"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_order">
+         <property name="text">
+          <string>ORDER BY</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox_fields_order">
+         <property name="editable">
+          <bool>true</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>*</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>fsroot</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ino</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>dir</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>filename</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>type</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>size</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>mtime</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>atime</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ctime</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>uid</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>gid</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="execSelect">
+         <property name="text">
+          <string>Go!</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QScrollArea" name="scrollArea">
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>1170</width>
+          <height>513</height>
+         </rect>
+        </property>
+        <widget class="QTextBrowser" name="selectResult">
+         <property name="geometry">
+          <rect>
+           <x>-120</x>
+           <y>30</y>
+           <width>1421</width>
+           <height>381</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QScrollBar" name="selectverticalScrollBar">
+         <property name="geometry">
+          <rect>
+           <x>1150</x>
+           <y>0</y>
+           <width>16</width>
+           <height>331</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="CheckCreateTable">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>430</y>
+           <width>141</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Create view</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit">
+         <property name="geometry">
+          <rect>
+           <x>210</x>
+           <y>430</y>
+           <width>111</width>
+           <height>32</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>temp</string>
+         </property>
+        </widget>
+        <widget class="QProgressBar" name="progressBar">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>490</y>
+           <width>1061</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="value">
+          <number>24</number>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox">
+         <property name="geometry">
+          <rect>
+           <x>60</x>
+           <y>460</y>
+           <width>1061</width>
+           <height>32</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_5">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>470</y>
+           <width>58</width>
+           <height>18</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>History</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="execSelect_2">
+         <property name="geometry">
+          <rect>
+           <x>1120</x>
+           <y>460</y>
+           <width>51</width>
+           <height>34</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Go!</string>
+         </property>
+        </widget>
+        <zorder>selectResult</zorder>
+        <zorder>selectverticalScrollBar</zorder>
+        <zorder>CheckCreateTable</zorder>
+        <zorder>lineEdit</zorder>
+        <zorder>progressBar</zorder>
+        <zorder>comboBox</zorder>
+        <zorder>label_5</zorder>
+        <zorder>execSelect_2</zorder>
+        <zorder></zorder>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1189</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuCreate_databasw">
+    <property name="title">
+     <string>&amp;Menu</string>
+    </property>
+    <addaction name="actionCreate_database"/>
+    <addaction name="actionUpdate_database"/>
+    <addaction name="actionAnalyze"/>
+   </widget>
+   <addaction name="menuCreate_databasw"/>
+  </widget>
+  <action name="actionCreate_database">
+   <property name="text">
+    <string>&amp;Create database</string>
+   </property>
+  </action>
+  <action name="actionUpdate_database">
+   <property name="text">
+    <string>&amp;Update database</string>
+   </property>
+  </action>
+  <action name="actionAnalyze">
+   <property name="text">
+    <string>&amp;Analyze</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="diskdb.qrc"/>
+ </resources>
+ <connections/>
+</ui>
